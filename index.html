@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#eef4fa"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pharmacy Quiz"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><title>Pharmacy Quiz Practice</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="app" class="shell">
+  <section id="homePage" class="page">
+    <header class="topbar"><h1>Pharmacy Quiz Practice</h1><label class="button primary file-button">+ Import Word (.docx)<input id="wordInput" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden></label></header>
+    <div class="home-heading"><h2>My Tests</h2><div class="small-actions"><button id="exportBtn" class="button subtle" type="button">Export Backup</button><label class="button subtle file-button">Import Backup<input id="backupInput" type="file" accept=".json,application/json" hidden></label></div></div>
+    <p id="homeNote" class="muted">GitHub quizzes are shared across devices. Your answers stay on this device. Import Word adds a private local quiz.</p>
+    <div class="github-bar"><span id="githubStatus" class="muted">Checking GitHub quizzes…</span><button id="refreshGithubBtn" type="button" class="button subtle">Refresh GitHub Quizzes</button></div><div id="testList" class="test-list"></div>
+  </section>
+  <section id="quizPage" class="page hidden" aria-label="Quiz">
+    <header class="topbar quiz-header"><button id="homeBtn" class="button subtle">← Home</button><h1 id="quizTitle">Quiz</h1></header>
+    <div class="quiz-layout">
+      <div class="left-panel"><div class="question-scroll"><div class="question-head"><span id="questionCount"></span><span id="questionType"></span></div><h2 id="questionText"></h2><form id="answersForm" aria-label="Answer options"></form><button id="submitBtn" type="button" class="button primary">Submit Answer</button><div id="feedback" class="feedback hidden" aria-live="polite"></div></div><div class="question-footer"><button id="previousBtn" class="button subtle" type="button">Previous</button><button id="nextBtn" class="button subtle" type="button">Next</button></div></div>
+      <aside class="right-panel"><h2>TEST STATUS</h2><div id="stats" class="stats"></div><h2>QUESTIONS</h2><div id="questionNav" class="question-nav" aria-label="Go to question"></div><button id="retakeBtn" class="button subtle full" type="button">Retake Quiz</button></aside>
+    </div>
+  </section>
+  <div id="toast" role="status" aria-live="polite" class="toast hidden"></div>
+</div>
+<script src="vendor/jszip.min.js"></script><script src="app.js"></script>
+</body></html>
